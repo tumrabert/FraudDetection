@@ -49,7 +49,7 @@ This project implements a complete machine learning solution for detecting fraud
 ### Step 1: Clone Repository
 ```bash
 git clone https://github.com/tumrabert/FraudDetecion
-FraudDetecioncd FraudDetecion
+cd FraudDetecion
 ```
 
 **That's it! No additional setup required - Docker handles everything.**
