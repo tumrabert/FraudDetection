@@ -6,9 +6,9 @@ This project implements a complete machine learning solution for detecting fraud
 - [Part 1: Exploratory Data Analysis (EDA)](#part-1-exploratory-data-analysis-eda)
 - [Part 2: Model Training](#part-2-model-training)
 - [Part 3: Model Serving (API and Storage)](#part-3-model-serving-api-and-storage)
-- [Part 4: System Architecture](#part-4-system-architecture-1)
+- [Part 4: System Architecture](#part-4-system-architecture)
 - [Setup Instructions](#setup-instructions)
-- [Docker Deployment](#docker-deployment)
+- [Running the Complete Workflow](#running-the-complete-workflow)
 
 ## 🎯 Take-Home Test Deliverables
 
@@ -114,7 +114,7 @@ GET /health       # API health check
 
 **No manual Python installation required - everything runs in Docker!**
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 **Prerequisites:** Ensure Docker and Docker Compose are installed on your system.
 
@@ -126,7 +126,7 @@ cd FraudDetecion
 
 **That's it! No additional setup required - Docker handles everything.**
 
-## 🔄 Running the Complete Workflow
+## Running the Complete Workflow
 
 ### Run EDA and Model Training (For part 1&2)
 
