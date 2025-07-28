@@ -2,32 +2,33 @@ FROM python:3.9-slim
 
 WORKDIR /workspace
 
-# Install system dependencies
+# Install system dependencies in one layer
 RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
 
-# Copy requirements and install Python dependencies
-COPY requirements.txt* ./
-RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
+# Copy requirements first for better caching
+COPY requirements.txt ./
 
-# Install additional training dependencies
-RUN pip install --no-cache-dir \
+# Install all Python dependencies in one layer
+RUN pip install --no-cache-dir -r requirements.txt && \
+    pip install --no-cache-dir \
     jupyter \
     jupyterlab \
     numpy \
     matplotlib \
     seaborn \
-    gdown
+    gdown && \
+    pip cache purge
 
 # Create model directory
 RUN mkdir -p model
 
-# Copy all files
+# Copy source code last to maximize cache hits
 COPY . .
 
 EXPOSE 8888
 
-# Default command will be overridden by docker-compose
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
