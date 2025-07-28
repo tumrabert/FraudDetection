@@ -253,4 +253,3 @@ if st.button("📄 Get Specific Page"):
 # Footer
 st.markdown("---")
 st.markdown("**Fraud Detection API Tester** | Built with Streamlit")
-st.markdown("Test your fraud detection model with ease!")
