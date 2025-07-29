@@ -20,44 +20,15 @@ This project implements a complete machine learning solution for detecting fraud
 
 ---
 
-# Part 1: Exploratory Data Analysis (EDA)
+  # Part 1: Exploratory Data Analysis (EDA)
+  **Location:** `Training.ipynb` 
+  
+  **Deliverable:** Comprehensive analysis of 6.36M transactions revealing key fraud patterns and feature engineering insights.
 
-**Location:** `Training.ipynb` (Sections 1-3)
+  # Part 2: Model Training
+  **Location:** `Training.ipynb` 
 
-**Key Findings:**
-- **Dataset Size:** 6,362,620 transactions with 6 features
-- **Class Imbalance:** Only 0.13% fraudulent transactions (8,213 fraud cases)
-- **Critical Pattern:** 98% of fraudulent transfers involve emptying source accounts
-- **Transaction Types:** CASH_OUT (35%) and PAYMENT (22%) are most common of fraud transactions.
-- **Feature Engineering Insight:** Balance inconsistencies (`error_bal_src`, `error_bal_dst`) are strong fraud indicators
-
-**Visualizations Created:**
-- Transaction type distribution analysis
-- Fraud rate by transaction type
-- Amount distribution comparisons (fraud vs legitimate)
-- Balance error patterns and correlations
-
-# Part 2: Model Training
-
-**Location:** `Training.ipynb` (Sections 4-6)
-
-**Model Performance:**
-- **Algorithm:** XGBoost Classifier with class weight balancing
-- **Precision:** 98.38% (extremely low false positives)
-- **Recall:** 99.67% (catches almost all fraud cases)
-- **AUPRC:** 0.9994 (excellent performance on imbalanced data)
-
-**Feature Engineering:**
-```python
-# Key engineered features
-error_bal_src = src_bal - amount - src_new_bal
-error_bal_dst = dst_bal + amount - dst_new_bal
-```
-
-**Model Configuration:**
-- `scale_pos_weight=1284.7` to handle class imbalance
-- `max_depth=6`, `learning_rate=0.1` for optimal performance
-- Time-based train/test split (80%/20%) to prevent data leakage
+  **Deliverable:** XGBoost classifier achieving 98% precision and 99% recall on fraud detection.
 
 # Part 3: Model Serving (API and Storage)
 
