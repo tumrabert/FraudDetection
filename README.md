@@ -91,8 +91,8 @@ GET /health       # API health check
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/tumrabert/FraudDetecion
-cd FraudDetecion
+git clone https://github.com/tumrabert/FraudDetection.git
+cd FraudDetection
 ```
 
 **That's it! No additional setup required - Docker handles everything.**
