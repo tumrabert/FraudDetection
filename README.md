@@ -22,7 +22,7 @@ This project implements a complete machine learning solution for detecting fraud
 
   # Part 1: Exploratory Data Analysis (EDA)
   **Location:** `Training.ipynb` 
-  
+
   **Deliverable:** Comprehensive analysis of 6.36M transactions revealing key fraud patterns and feature engineering insights.
 
   # Part 2: Model Training
@@ -426,5 +426,3 @@ GET /analytics/fraud-trends               # Dashboard metrics
 - **Business Metrics:** Fraud detection rate, false positives
 - **System Metrics:** Kafka lag, API latency, database connections
 - **Alerts:** Slack for system issues, email for high-risk cases
-
-This architecture balances simplicity with production readiness, ensuring reliable real-time fraud detection while providing auditors with efficient investigation tools.
